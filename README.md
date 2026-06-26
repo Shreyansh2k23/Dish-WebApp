@@ -67,7 +67,7 @@ DishDashboard/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/dish-dashboard.git
+git clone https://github.com/Shreyansh2k23/dish-dashboard.git
 
 cd dish-dashboard
 ```
