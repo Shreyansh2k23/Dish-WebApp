@@ -18,6 +18,7 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+.env
 
 # VS Code
 .vscode/

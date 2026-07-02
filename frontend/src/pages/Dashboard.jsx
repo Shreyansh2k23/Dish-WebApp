@@ -3,7 +3,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 import DishCard from "../components/DishCard";
 
-const socket = io("http://localhost:5000");
+const socket = io(process.env.BACKEND_URL); // Replace with your backend URL
 
 function Dashboard() {
   const [dishes, setDishes] = useState([]);
@@ -11,7 +11,7 @@ function Dashboard() {
 
   const fetchDishes = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/dishes");
+      const res = await axios.get(`${process.env.BACKEND_URL}/api/dishes`);
       setDishes(res.data.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ function Dashboard() {
 
   const togglePublish = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/dishes/${id}`);
+      await axios.patch(`${process.env.BACKEND_URL}/api/dishes/${id}`);
     } catch (error) {
       console.log(error);
     }
